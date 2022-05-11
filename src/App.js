@@ -8,21 +8,22 @@ class App extends Component{
     this.state={
       teams: data
     }
-    console.log(data)
   }
 handleVote=(index)=>{
-  const {teams} =this.state;
-  console.log(index)
- const newData= [...teams]
+ const newData= [...this.state.teams]
  newData[index].vote+=1
 this.setState({teams:newData })
 }
 
+handleClear = (index) => {
+const newState= [...this.state.teams]
+newState[index].vote=0
+this.setState({teams:newState})
+}
 render() {
-  const {teams} = this.state
 return(
   <div className="container">
-    {teams.map((team, index)=> {
+    {this.state.teams.map((team, index)=> {
     return (
       <div className="card" key={team.name}>
         <img src={team.img} alt={`${team.name} logo`} />
@@ -31,7 +32,7 @@ return(
         
     <div className="lower">
         <p>Vote count: <span id="span1">{team.vote}</span></p>
-        <button type="reset" className='clear-btn'>Clear</button>
+        <button onClick={()=>this.handleClear(index)} type="reset" className='clear-btn'>Clear</button>
     </div>
     </div>
     )
