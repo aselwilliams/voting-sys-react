@@ -16,18 +16,25 @@ img{
   width: 230px;
   height: 300px;
 }
-button{
+button {
   background-color: green;
   color: white;
   width: 220px;
   border-radius: 3px;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   margin-bottom: 10px;
+  border:none;
 }
 .lower{
   border-top: 1px solid lightgrey;
   background-color: rgb(240, 238, 238);
   text-align: left;
   padding: 7px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.clear-btn {
+  width:80px;
+  background-color: brown;
 }

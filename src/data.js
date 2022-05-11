@@ -15,3 +15,4 @@ const data = [
         vote: 0,
     }
 ]
+export default data
